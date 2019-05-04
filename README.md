@@ -121,21 +121,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | Install the npm package **serialize-json** and using these functions  |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | It is simply a package manager that dowload and install some NodeJS packages with dependencies.  |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | This command allows to download and install a new NodeJS package with all dependencies. The flag allows to control dependencies.  |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | We can search package, search documentation about commands and packages, see all dependants and dependencies and collaborate for new packages.  |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | Install the specific UUID and using first or third version to generate a random UUID. |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | With the `setInterval()` function.  |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | Include the `dgram`package, create an UDP4 socket, build a new buffer with the message and use the function to send message including length, port and host (unicast).  |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | Use the function `process.argv` and loop in array. |
 
 
 ## Task 3: package the "musician" app in a Docker image
