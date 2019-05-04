@@ -121,7 +121,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | Install the npm package **serialize-json** and using these functions  |
+| | We can use the `JSON.stringify()` function  |
 |Question | What is **npm**?  |
 | | It is simply a package manager that dowload and install some NodeJS packages with dependencies.  |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
