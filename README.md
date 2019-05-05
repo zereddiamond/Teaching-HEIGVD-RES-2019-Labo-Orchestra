@@ -165,11 +165,11 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
 | | We can use the `Map` class that inherits to `Map.prototype` and using some these differents methods |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | Download and install the `moment` package with npm and using some methods to formatting a date |
 |Question | When and how do we **get rid of inactive players**?  |
 | | *Enter your response here...* |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | Include the `net` package, create a server that listen is a specific port and host and that created a socket, use these differents methods to read, write, etc. from the socket. Finally, close the socket at the end.  |
 
 
 ## Task 5: package the "auditor" app in a Docker image
