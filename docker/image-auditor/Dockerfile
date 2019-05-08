@@ -1,13 +1,11 @@
-FROM ubuntu
+FROM node
 
-RUN apt update -y
-RUN apt install -y  nodejs npm
-RUN npm install net --save
-RUN npm install dgram --save
-RUN npm install moment --save
+WORKDIR /opt/app
 
-COPY src/auditor.js /opt/auditor.js
+COPY src/package.json /opt/app
+RUN npm install
+COPY src/auditor.js /opt/app/auditor.js
 
 EXPOSE 2205
 
-ENTRYPOINT ["nodejs", "/opt/auditor.js"]
+ENTRYPOINT ["nodejs", "/opt/app/auditor.js"]

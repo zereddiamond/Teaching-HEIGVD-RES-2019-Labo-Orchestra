@@ -1,11 +1,11 @@
-FROM ubuntu
+FROM node
 
-RUN apt update
-RUN apt install -y nodejs npm
-RUN npm install -y  uuid
+WORKDIR /opt/app
 
-COPY src/musician.js /opt/musician.js
+COPY src/package.json /opt/app
+RUN npm install
+COPY src/musician.js /opt/app/musician.js
 
 EXPOSE 50000
 
-ENTRYPOINT ["nodejs", "/opt/musician.js"]
+ENTRYPOINT ["nodejs", "/opt/app/musician.js"]
