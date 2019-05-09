@@ -24,13 +24,15 @@ net.createServer(function(socket) {
     
     verificationAllMusicians();
 
-    var messageToSend = "";
+    var result = [];
 
     mapMusicians.forEach(function(value, key) {
-        messageToSend = messageToSend + '\n\n' + value;
+        result.push(value);
     });
 
-    socket.write('[' + messageToSend + ']\r\n');
+    socket.write(JSON.stringify(result));
+    socket.write('\r\n');
+    socket.end();
 }).listen(port);
 
 var serverUdp = datagram.createSocket('udp4');
@@ -51,8 +53,8 @@ function delayBetweenTimes(dateAndTime) {
 
 function verificationAllMusicians() {
     mapMusicians.forEach(function(value, key) {
-        infos = JSON.parse(value);
-        var dateAndTime = infos.dateAndHour;
+        infos = value;
+        var dateAndTime = infos.activeSince;
 
         var delay = delayBetweenTimes(dateAndTime);
 
@@ -68,7 +70,7 @@ serverUdp.on('message', function(message, remote) {
 
     infosMusician = JSON.parse(message);
 
-    mapMusicians.set(infosMusician.uuid, message);
+    mapMusicians.set(infosMusician.uuid, infosMusician);
 });
 
 serverUdp.bind(port_udp, function() {

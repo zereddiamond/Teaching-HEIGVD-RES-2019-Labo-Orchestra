@@ -27,12 +27,11 @@ var index;
 
 message = new Buffer('UUID : ' + idMusician +', Instrument : ' + instruments[index] + ', sound : ' + soundInstruments[index]);
 
-var activeSinceDate = new Date();
 var json;
 
 function clientSend() {
     var date = new Date();
-    json = new Buffer(JSON.stringify({ uuid: idMusician, musician: instruments[index], activeSince: activeSinceDate, dateAndHour: date }));
+    json = new Buffer(JSON.stringify({ uuid: idMusician, instrument: instruments[index], activeSince: date }));
     client.send(json, 0, json.length, port, multicast_group, function(err, bytes) {
         if (err) throw err;
         console.log('Instrument : ' + instruments[index] + ', sound : ' + soundInstruments[index]);
