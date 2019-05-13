@@ -167,7 +167,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
 | | Download and install the `moment` package with npm and using some methods to formatting a date |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | We can use the `moment.js` to make a delta between actual date and `activeDate` and check if it is equal or bigger than 5. We make it before to send payload in TCP client. |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
 | | Include the `net` package, create a server that listen is a specific port and host and that created a socket, use these differents methods to read, write, etc. from the socket. Finally, close the socket at the end.  |
 
